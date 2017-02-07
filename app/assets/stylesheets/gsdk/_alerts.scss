@@ -35,3 +35,6 @@
      background-color: $red-navbar;
 }
 
+.alert-dismissible > button.close {
+    right: 0;
+}
