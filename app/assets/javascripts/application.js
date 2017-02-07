@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
+//= require custom
+//= require get-shit-done
+//= require gsdk-bootstrapswitch
+//= require gsdk-checkbox
+//= require gsdk-radio
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
