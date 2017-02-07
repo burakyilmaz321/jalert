@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row" style="padding-top: 100px;display: flex;align-items: center;">
+
+	<div class="col-md-8" style="padding-bottom: 5%;">
+
+		<h2 style="color:#ffffff;">Smart job marketplace for students and new grads.</h2>
+
+	</div>
+
+	<div class="col-md-4">
+
+		<div class="panel panel-default register-card">
+
+		  <div class="panel-body">
+
+				<%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+				  <div class="form-group">
+
+				    <label for="exampleInputEmail1" style="color:#777;">Email address</label>
+
+				    <%= f.text_field :email, class:"form-control", id:"exampleInputEmail1", placeholder:"Email" %>
+
+				  </div>
+
+				  <div class="form-group">
+
+				    <label for="exampleInputPassword1" style="color:#777;">Password</label>
+
+				    <%= f.password_field :password, class:"form-control", id:"exampleInputPassword1", placeholder:"Password" %>
+				  
+				  </div>
+
+				  <%= f.submit 'Sign in', class:"btn btn-default" %>
+	
+				<% end %>		    
+
+		  </div>
+
+		</div>		
+
+	</div>
+
+</div>
