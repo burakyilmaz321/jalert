@@ -1,26 +1,42 @@
-<h2>Log in</h2>
+<div class="container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+  <h2>Login</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <div class="panel panel-default register-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+    
+    <div class="panel-body">
+      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        
+        <div class="form-group">
+          
+          <label for="exampleInputEmail1" style="color:#777;">Email address</label>
+          
+          <%= f.email_field :email, autofocus: true, class:"form-control", id:"exampleInputEmail1", placeholder:"Email" %>
+        
+        </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <div class="form-group">
+          
+          <label for="exampleInputPassword1" style="color:#777;">Password</label>
+          
+          <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"exampleInputPassword1", placeholder:"Password" %>
+        
+        </div>
+        
+        <%= f.submit "Log in", class:"btn btn-default" %>
+        
+      <% end %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <br>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+
+      <% end -%>
+
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</div>

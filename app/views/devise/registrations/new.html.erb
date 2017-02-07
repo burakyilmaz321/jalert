@@ -1,49 +1,51 @@
 <%= devise_error_messages! %>
 
-<h2>Sign up</h2>
+<div class="container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
 
-<div class="panel panel-default register-card">
-  
-  <div class="panel-body">
+  <h2>Sign up</h2>
+
+  <div class="panel panel-default register-card">
     
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-      <div class="form-group">
-        
-        <label for="exampleInputEmail1" style="color:#777;">Email address</label>
-        
-        <%= f.email_field :email, autofocus: true, class:"form-control", id:"exampleInputEmail1", placeholder:"Email" %>
+    <div class="panel-body">
       
-      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-      <div class="form-group">
+        <div class="form-group">
+          
+          <label for="exampleInputEmail1" style="color:#777;">Email address</label>
+          
+          <%= f.email_field :email, autofocus: true, class:"form-control", id:"exampleInputEmail1", placeholder:"Email" %>
         
-        <label for="exampleInputPassword1" style="color:#777;">Password</label>
-        
-        <% if @minimum_password_length %>
+        </div>
 
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        
-        <% end %><br />
-        
-        <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"exampleInputPassword1", placeholder:"Password"  %>
-      
-      </div>
+        <div class="form-group">
+          
+          <label for="exampleInputPassword1" style="color:#777;">Password</label>
+          
+          <% if @minimum_password_length %>
 
-      <div class="form-group">
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          
+          <% end %><br />
+          
+          <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"exampleInputPassword1", placeholder:"Password"  %>
         
-        <label for="exampleInputConfirmPassword1" style="color:#777;">Confirm Password</label>
-        
-        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"    exampleInputConfirmPassword1", placeholder:"Confirm Password" %>
-      
-      </div>
+        </div>
 
-      <%= f.submit "Sign up", class:"btn btn-default" %>
-  
-    <% end %>
+        <div class="form-group">
+          
+          <label for="exampleInputConfirmPassword1" style="color:#777;">Confirm Password</label>
+          
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"    exampleInputConfirmPassword1", placeholder:"Confirm Password" %>
+        
+        </div>
+
+        <%= f.submit "Sign up", class:"btn btn-default" %>
     
+      <% end %>
+      
+    </div>
+
   </div>
 
 </div>
-
-<%= render "devise/shared/links" %>
